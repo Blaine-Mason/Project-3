@@ -1,12 +1,14 @@
 #include "SUStack.h"
 template <class DataType>
 SUStackArr<DataType>::SUStackArr(){ // Constructor
-
+  capacity = 0;
+  top = 0;
+  arr = new DataType[capacity];
 }
 
 template <class DataType>
-SUStackArr<DataType>::SUStackArr(const SUStackArr &){ // Copy Constructor
-
+SUStackArr<DataType>::SUStackArr(const SUStackArr& rhs){ // Copy Constructor
+    
 }
 
 template <class DataType>
