@@ -23,4 +23,5 @@ class SUList{
     bool contains(const DataType&);// Tests for membership
     SUList<DataType>& operator=(const SUList<DataType>&); // Overloaded assignment
 };
+#include "SUList.cpp"
 #endif

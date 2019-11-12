@@ -36,5 +36,5 @@ class SUQueueList{
     void printQueue() const; // Prints the queue from the front to the rear
     SUQueueList<DataType>& operator=(const SUQueueList<DataType>&); // Assignment operator
 };
-
+#include "SUQueue.cpp"
 #endif

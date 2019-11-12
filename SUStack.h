@@ -8,6 +8,7 @@ class SUStackArr{
     DataType* arr; // The array of items
     int capacity; // The size of the current array
     int top; // The location of the top element
+    DataType* copyArr(DataType*, int, int);
   public:
     SUStackArr(); // Constructor
     SUStackArr(const SUStackArr &); // Copy Constructor
@@ -35,5 +36,5 @@ class SUStackList{
     void printStack() const; // Prints the stack from the top, down
     SUStackList<DataType>& operator=(const SUStackList<DataType>&); // Assignment operator
 };
-
+#include "SUStack.cpp"
 #endif

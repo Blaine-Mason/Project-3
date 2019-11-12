@@ -1,49 +1,79 @@
 #include "SUStack.h"
+#include <iostream>
+
+
 template <class DataType>
 SUStackArr<DataType>::SUStackArr(){ // Constructor
-  capacity = 0;
-  top = 0;
+  capacity = 2;
+  top = -1;
   arr = new DataType[capacity];
 }
 
 template <class DataType>
 SUStackArr<DataType>::SUStackArr(const SUStackArr& rhs){ // Copy Constructor
-    
+  capacity = rhs.capacity;
+  top = rhs.top;
+  for(int i = 0; i < capacity; i++){
+    arr[i] = rhs.arr[i];
+  }
 }
 
 template <class DataType>
 SUStackArr<DataType>::~SUStackArr(){ // Destructor
-
+  delete[] arr;
 }
 
 template <class DataType>
 int SUStackArr<DataType>::size() const{ // get the number of elements in the stack
-
+  return capacity;
 }
 
 template <class DataType>
 bool SUStackArr<DataType>::isEmpty() const{ // Check if the stack is empty
-
+  return size() == 0;
 }
 
 template <class DataType>
-void SUStackArr<DataType>::push(const DataType&){ // Pushes an object onto the stack
-
+void SUStackArr<DataType>::push(const DataType& d){ // Pushes an object onto the stack
+  if(top == capacity - 1){
+    capacity++;
+    arr = copyArr(arr, capacity, top);
+    top++;
+    arr[top] = d;
+  }else{
+    top++;
+    arr[top] = d;
+  }
 }
 
 template <class DataType>
-void SUStackArr<DataType>::pop(DataType&){ // Pop an object off the stack and store it
-
+void SUStackArr<DataType>::pop(DataType& d){ // Pop an object off the stack and store it
+  d = arr[top];
+  top--;
+  capacity--;
+  arr = copyArr(arr, capacity, top);
 }
 
 template <class DataType>
 void SUStackArr<DataType>::printStack() const{ // Prints the stack from the top, down
-
+  for(int i = 0; i < capacity; i++){
+    std::cout << arr[i] << std::endl;
+  }
 }
 
 template <class DataType>
 SUStackArr<DataType>& SUStackArr<DataType>::operator=(const SUStackArr<DataType>&){ // Assignment operator
 
+}
+template <class DataType>
+DataType* SUStackArr<DataType>::copyArr(DataType* arr, int cap, int t){
+  DataType* newArr;
+  newArr = new DataType[cap];
+  //std::cout << cap << std::endl;
+  for(int i = 0; i <= t; i++){
+    newArr[i] = arr[i];
+  }
+  return newArr;
 }
 
 
