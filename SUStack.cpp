@@ -63,7 +63,7 @@ void SUStackArr<DataType>::printStack() const{ // Prints the stack from the top,
 
 template <class DataType>
 SUStackArr<DataType>& SUStackArr<DataType>::operator=(const SUStackArr<DataType>&){ // Assignment operator
-
+  //github is cool
 }
 template <class DataType>
 DataType* SUStackArr<DataType>::copyArr(DataType* arr, int cap, int t){
