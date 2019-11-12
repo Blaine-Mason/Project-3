@@ -25,7 +25,7 @@ SUStackArr<DataType>::~SUStackArr(){ // Destructor
 
 template <class DataType>
 int SUStackArr<DataType>::size() const{ // get the number of elements in the stack
-  return capacity;
+  return top + 1;
 }
 
 template <class DataType>
