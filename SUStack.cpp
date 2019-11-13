@@ -4,7 +4,7 @@
 
 template <class DataType>
 SUStackArr<DataType>::SUStackArr(){ // Constructor
-  capacity = 2;
+  capacity = 3;
   top = -1;
   arr = new DataType[capacity];
 }

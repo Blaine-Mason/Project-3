@@ -19,5 +19,14 @@ int main(){
   intQueue.enqueue(8);
   intQueue.enqueue(9);
   intQueue.printQueue();
+
+  std::cout << std::endl;
+
+  SUList<int> intList;
+  intList.putFront(10);
+  intList.putFront(12);
+  intList.putBack(15);
+  intList.display();
+  std::cout << intList.size() << std::endl;
   return 0;
 }

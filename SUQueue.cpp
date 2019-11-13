@@ -3,7 +3,7 @@
 
 template <class DataType>
 SUQueueArr<DataType>::SUQueueArr(){ // Constructor
-	capacity = 2;
+	capacity = 3;
 	front = 0;
 	rear = 0;
 	arr = new DataType[capacity];
