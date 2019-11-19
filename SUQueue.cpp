@@ -117,13 +117,32 @@ bool SUQueueList<DataType>::isEmpty() const{ // Check if the queue is empty @Luk
 }
 
 template <class DataType>
-void SUQueueList<DataType>::enqueue(const DataType&){ // Enqueues some data
-
+void SUQueueList<DataType>::enqueue(const DataType& d){ // Enqueues some data @Luke
+	putBack(d);
 }
 
 template <class DataType>
-void SUQueueList<DataType>::dequeue(DataType&){ // Get the front element and store it
+void SUQueueList<DataType>::dequeue(DataType& d){ // Get the front element and store it @Luke
+	if(!isEmpty())
+	{
+		d = list.getFront();
 
+		//move every element forward one place
+		for(int i = 0; i < list.rear - 1; i++)
+		{
+			auto* crsr = list.head;
+			while(i > 0)
+			{
+				crsr = crsr->next;
+				i--;
+			}
+			crsr->data = crsr->next.data;
+		}
+
+		list.rear--;
+	}
+
+	return;
 }
 
 template <class DataType>
