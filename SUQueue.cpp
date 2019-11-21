@@ -64,9 +64,11 @@ void SUQueueArr<DataType>::printQueue() const{ // Prints the queue from the fron
 		std::cout << "Queue is Empty" << std::endl;
 		return;
 	}else{
+		std::cout << "Queue: ";
 		for(int i = 0; i < rear; i++){
-			std::cout << arr[i] << std::endl;
+			std::cout << arr[i] << " ";
 		}
+		std::cout << std::endl;
 		return;
 	}
 }
@@ -90,74 +92,40 @@ SUQueueList<DataType>::SUQueueList(const SUQueueList &){ // Copy Constructor
 
 template <class DataType>
 SUQueueList<DataType>::~SUQueueList(){ // Destructor @Luke
-	auto* crsr = list.head;
-	while(crsr)
-	{
-		list.head = crsr;
-		delete list.head;
-		crsr = crsr->next;
-	}
+	
 }
 
 template <class DataType>
 int SUQueueList<DataType>::size() const{ // get the number of elements in the queue @Luke
-	int count = 0;
-	auto* crsr = list.head;
-	while(crsr)
-	{
-		count++;
-		crsr = crsr->next;
-	}
-	return count;
+	return list.size();
 }
 
 template <class DataType>
 bool SUQueueList<DataType>::isEmpty() const{ // Check if the queue is empty @Luke
-	return !list.head;
+	return list.size() == 0;
 }
 
 template <class DataType>
 void SUQueueList<DataType>::enqueue(const DataType& d){ // Enqueues some data @Luke
-	putBack(d);
+	std::cout << "Enqueuing " << d << "..." << std::endl;
+	list.putBack(d);
 }
 
 template <class DataType>
 void SUQueueList<DataType>::dequeue(DataType& d){ // Get the front element and store it @Luke
 	if(!isEmpty())
-	{
 		d = list.getFront();
-
-		//move every element forward one place
-		for(int i = 0; i < list.rear - 1; i++)
-		{
-			auto* crsr = list.head;
-			while(i > 0)
-			{
-				crsr = crsr->next;
-				i--;
-			}
-			crsr->data = crsr->next.data;
-		}
-
-		list.rear--;
-	}
-
+		std::cout << "Dequeuing " << d << "..." << std::endl;
 	return;
 }
 
 template <class DataType>
 void SUQueueList<DataType>::printQueue() const{ // Prints the queue from the front to the rear @Luke
-	if(!list.head){
+	if(isEmpty()){
 		std::cout << "Queue is Empty" << std::endl;
 		return;
 	}else{
-		auto* crsr = list.head;
-		while(crsr)
-		{
-			std::cout << crsr->data << std::endl;
-			crsr = crsr->next;
-		}
-		return;
+		list.display();
 	}
 }
 

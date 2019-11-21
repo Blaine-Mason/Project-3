@@ -68,6 +68,7 @@ void SUList<DataType>::putBack(const DataType& d){ // Add to the back
 	nNode->data = d;
 	nNode->next = nullptr;
 	if(!tail){
+		head = nNode;
 		tail = nNode;
 	}else{
 		tail->next = nNode;
@@ -105,10 +106,12 @@ SUList<DataType>& SUList<DataType>::operator=(const SUList<DataType>&){ // Overl
 }
 
 template <class DataType>
-void SUList<DataType>::display(){
+void SUList<DataType>::display() const{
 	ListNode* crsr = head;
+	std::cout << "List: ";
 	while(crsr){
-		std::cout << crsr->data << std::endl;
+		std::cout << crsr->data << " ";
 		crsr = crsr->next;
 	}
+	std::cout << std::endl;
 }

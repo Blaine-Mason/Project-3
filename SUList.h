@@ -21,7 +21,7 @@ class SUList{
     void putBack(const DataType&); // Add to the back
     int size() const; // Returns the number of elements
     bool contains(const DataType&);// Tests for membership
-    void display(); //Displays List
+    void display() const; //Displays List
     SUList<DataType>& operator=(const SUList<DataType>&); // Overloaded assignment
 };
 #include "SUList.cpp"

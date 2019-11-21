@@ -35,6 +35,7 @@ bool SUStackArr<DataType>::isEmpty() const{ // Check if the stack is empty
 
 template <class DataType>
 void SUStackArr<DataType>::push(const DataType& d){ // Pushes an object onto the stack
+  std::cout << "Pushing: " << d << std::endl;
   if(top == capacity - 1){
     capacity++;
     arr = copyArr(arr, capacity, top);
@@ -49,6 +50,7 @@ void SUStackArr<DataType>::push(const DataType& d){ // Pushes an object onto the
 template <class DataType>
 void SUStackArr<DataType>::pop(DataType& d){ // Pop an object off the stack and store it
   d = arr[top];
+  std::cout << "Popping: " << d << std::endl;
   top--;
   capacity--;
   arr = copyArr(arr, capacity, top);
@@ -56,9 +58,11 @@ void SUStackArr<DataType>::pop(DataType& d){ // Pop an object off the stack and 
 
 template <class DataType>
 void SUStackArr<DataType>::printStack() const{ // Prints the stack from the top, down
+  std::cout << "Stack: ";
   for(int i = 0; i < capacity; i++){
-    std::cout << arr[i] << std::endl;
+    std::cout << arr[i] << " ";
   }
+  std::cout << std::endl;
 }
 
 template <class DataType>
@@ -107,8 +111,9 @@ bool SUStackList<DataType>::isEmpty() const{ // Check if the stack is empty
 }
 
 template <class DataType>
-void SUStackList<DataType>::push(const DataType&){ // Pushes an object onto the stack
-
+void SUStackList<DataType>::push(const DataType& d){ // Pushes an object onto the stack
+  list.putFront(d);
+  return;
 }
 
 template <class DataType>
@@ -118,7 +123,8 @@ void SUStackList<DataType>::pop(DataType&){ // Pop an object off the stack and s
 
 template <class DataType>
 void SUStackList<DataType>::printStack() const{ // Prints the stack from the top, down
-
+  list.display();
+  return;
 }
 
 template <class DataType>
