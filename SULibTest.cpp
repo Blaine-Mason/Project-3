@@ -59,6 +59,11 @@ int main(){
   intStackList.push(2);
   intStackList.push(5);
   intStackList.printStack();
+  int stackListTest = 0;
+  intStackList.pop(stackListTest);
+  intStackList.printStack();
   std::cout << "==========================" << std::endl;
+
+
   return 0;
 }

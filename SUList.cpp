@@ -33,26 +33,34 @@ DataType SUList<DataType>::getFront(){// Remove & return the front
 
 template <class DataType>
 DataType SUList<DataType>::getBack(){ // Remove & return the back
-	ListNode* crsr = head;
-	while(crsr->next){
-		crsr = crsr->next;
-	}
 	ListNode* temp = tail;
 	DataType t = tail->data;
-	tail = crsr;
-	delete temp;
-	return t;
+	if(head && tail){
+		tail = temp->prev;
+		tail->next = nullptr;
+		delete temp;
+		return t;
+	}if(!head->next){
+		tail = temp->prev;
+		head = nullptr;
+		delete temp;
+		return t;
+	}
 }
 
 template <class DataType>
 void SUList<DataType>::putFront(const DataType& d){// Add to the front
 	ListNode* nNode = new ListNode;
 	nNode->data = d;
-	if(!head){
+	nNode->next = nullptr;
+	nNode->prev = nullptr;
+	if(!head && !tail){
+		nNode->next = head;
 		head = nNode;
-		nNode->next = nullptr;
+		tail = nNode;
 	}else{
 		nNode->next = head;
+		head->prev = nNode;
 		head = nNode;
 	}
 	ListNode* crsr = head;
@@ -67,10 +75,13 @@ void SUList<DataType>::putBack(const DataType& d){ // Add to the back
 	ListNode* nNode = new ListNode;
 	nNode->data = d;
 	nNode->next = nullptr;
-	if(!tail){
+	nNode->prev = nullptr;
+	if(!tail && !head){
+		nNode->prev = tail;
 		head = nNode;
 		tail = nNode;
 	}else{
+		nNode->prev = tail;
 		tail->next = nNode;
 		tail = nNode;
 	}

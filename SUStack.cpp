@@ -102,23 +102,25 @@ SUStackList<DataType>::~SUStackList(){ // Destructor
 
 template <class DataType>
 int SUStackList<DataType>::size() const{ // get the number of elements in the stack
-
+  return list.size();
 }
 
 template <class DataType>
 bool SUStackList<DataType>::isEmpty() const{ // Check if the stack is empty
-
+  return size() == 0;
 }
 
 template <class DataType>
 void SUStackList<DataType>::push(const DataType& d){ // Pushes an object onto the stack
+  std::cout << "Pushing " << d << "..." << std::endl;
   list.putFront(d);
   return;
 }
 
 template <class DataType>
-void SUStackList<DataType>::pop(DataType&){ // Pop an object off the stack and store it
-
+void SUStackList<DataType>::pop(DataType& d){ // Pop an object off the stack and store it
+  d = list.getFront();
+  std::cout << "Popping " << d << "..." << std::endl;
 }
 
 template <class DataType>
