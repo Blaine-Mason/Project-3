@@ -13,6 +13,7 @@ template <class DataType>
 SUStackArr<DataType>::SUStackArr(const SUStackArr& rhs){ // Copy Constructor
   capacity = rhs.capacity;
   top = rhs.top;
+  arr = new DataType[capacity];
   for(int i = 0; i < capacity; i++){
     arr[i] = rhs.arr[i];
   }
@@ -66,14 +67,18 @@ void SUStackArr<DataType>::printStack() const{ // Prints the stack from the top,
 }
 
 template <class DataType>
-SUStackArr<DataType>& SUStackArr<DataType>::operator=(const SUStackArr<DataType>&){ // Assignment operator
-  //github is cool
+SUStackArr<DataType>& SUStackArr<DataType>::operator=(const SUStackArr<DataType>& rhs){ // Assignment operator
+  delete[] this->arr;
+  capacity = rhs.capacity;
+  top = rhs.top;
+  this->arr = new DataType[capacity];
+  for(int i = 0; i < capacity; i++)
+    this->arr[i] = rhs.arr[i];
 }
 template <class DataType>
 DataType* SUStackArr<DataType>::copyArr(DataType* arr, int cap, int t){
   DataType* newArr;
   newArr = new DataType[cap];
-  //std::cout << cap << std::endl;
   for(int i = 0; i <= t; i++){
     newArr[i] = arr[i];
   }
@@ -91,7 +96,7 @@ SUStackList<DataType>::SUStackList(){ // Constructor
 }
 
 template <class DataType>
-SUStackList<DataType>::SUStackList(const SUStackList &){ // Copy Constructor
+SUStackList<DataType>::SUStackList(const SUStackList & rhs){ // Copy Constructor
 
 }
 

@@ -3,7 +3,7 @@
 
 template <class DataType>
 SUQueueArr<DataType>::SUQueueArr(){ // Constructor
-	capacity = 3;
+	capacity = 20;
 	front = 0;
 	rear = 0;
 	arr = new DataType[capacity];
@@ -14,6 +14,7 @@ SUQueueArr<DataType>::SUQueueArr(const SUQueueArr &rhs){ // Copy Constructor
 	capacity = rhs.capacity ;
 	front = rhs.front;
 	rear = rhs.rear;
+	arr = new DataType[capacity];
 	for(int i = 0; i < capacity; i++){
 		arr[i] = rhs.arr[i];
 	}
@@ -74,8 +75,15 @@ void SUQueueArr<DataType>::printQueue() const{ // Prints the queue from the fron
 }
 
 template <class DataType>
-SUQueueArr<DataType>& SUQueueArr<DataType>::operator=(const SUQueueArr<DataType>&){ // Assignment operator
-
+SUQueueArr<DataType>& SUQueueArr<DataType>::operator=(const SUQueueArr<DataType>& rhs){ // Assignment operator
+	delete[] arr;
+	capacity = rhs.capacity;
+	arr = new DataType[capacity];
+	front = rhs.front;
+	rear = rhs.rear;
+	for(int i = 0; i < capacity; i++){
+		arr[i] = rhs.arr[i];
+	}
 }
 
 

@@ -65,5 +65,35 @@ int main(){
   std::cout << "==========================" << std::endl;
 
 
+  SUStackArr<int> testRotStack;
+  testRotStack = intStack;
+  SUQueueArr<int> testRotQ;
+  testRotQ = intQueue;
+
+  testRotStack.printStack();
+  testRotQ.printQueue();
+  SUStackArr<std::string> dummyArr;
+
+  dummyArr.push("Hi");
+  dummyArr.push("This");
+  dummyArr.push("Works");
+  SUStackArr<std::string> testCCStackArr(dummyArr);
+
+  dummyArr.printStack();
+  testCCStackArr.printStack();
+
+
+  SUQueueArr<std::string> dummyQ;
+
+  dummyQ.enqueue("Hi");
+  dummyQ.enqueue("This");
+  dummyQ.enqueue("Forsure");
+  dummyQ.enqueue("Works");
+  SUQueueArr<std::string> testCCQArr(dummyQ);
+
+  dummyQ.printQueue();
+  testCCQArr.printQueue();
+
+
   return 0;
 }
