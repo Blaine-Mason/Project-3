@@ -84,6 +84,7 @@ SUQueueArr<DataType>& SUQueueArr<DataType>::operator=(const SUQueueArr<DataType>
 	for(int i = 0; i < capacity; i++){
 		arr[i] = rhs.arr[i];
 	}
+	return *this;
 }
 
 

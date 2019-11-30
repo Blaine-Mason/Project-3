@@ -7,8 +7,28 @@ SUList<DataType>::SUList(){ // Default ctor
 }
 
 template <class DataType>
-SUList<DataType>::SUList(const SUList&){ // Copy ctor
+SUList<DataType>::SUList(const SUList& rhs){ // Copy ctor
+	ListNode* crsr = rhs.head;
 
+	int count = 0;
+
+	while(crsr){
+		count++;
+		crsr = crsr->next;
+	}
+	crsr = rhs.head;
+	ListNode* temp = rhs.head;
+	head = nullptr;
+	tail = nullptr;
+
+	for(crsr = rhs.head; crsr; crsr = crsr->next){
+		for(int i = 0; i < count - 1; i++){
+			temp = temp->next;
+		}
+		putFront(temp->data);
+		temp = rhs.head;
+		count--;
+	}
 }
 
 template <class DataType>
@@ -112,7 +132,39 @@ bool SUList<DataType>::contains(const DataType& d){// Tests for membership
 }
 
 template <class DataType>
-SUList<DataType>& SUList<DataType>::operator=(const SUList<DataType>&){ // Overloaded assignment
+SUList<DataType>& SUList<DataType>::operator=(const SUList<DataType>& rhs){ // Overloaded assignment
+	int count = 0;
+	if(this == &rhs){
+		std::cout << "Self Assignment" << std::endl;
+		ListNode* temp = nullptr;
+		return *this;
+	}else{
+		ListNode* crsr = this->head;
+		while(crsr){
+			ListNode* nextN = crsr->next;
+			delete crsr;
+			crsr = nextN;
+		}
+		crsr = rhs.head;
+		while(crsr){
+			count++;
+			crsr = crsr->next;
+		}
+		crsr = rhs.head;
+		ListNode* temp = rhs.head;
+		this->head = nullptr;
+		this->tail = nullptr;
+
+		for(crsr = rhs.head; crsr; crsr = crsr->next){
+			for(int i = 0; i < count - 1; i++){
+				temp = temp->next;
+			}
+			this->putFront(temp->data);
+			temp = rhs.head;
+			count--;
+		}
+		return *this;
+	}
 
 }
 

@@ -72,6 +72,8 @@ int main(){
 
   testRotStack.printStack();
   testRotQ.printQueue();
+  std::cout << "==========================" << std::endl;
+
   SUStackArr<std::string> dummyArr;
 
   dummyArr.push("Hi");
@@ -81,7 +83,7 @@ int main(){
 
   dummyArr.printStack();
   testCCStackArr.printStack();
-
+  std::cout << "==========================" << std::endl;
 
   SUQueueArr<std::string> dummyQ;
 
@@ -93,6 +95,32 @@ int main(){
 
   dummyQ.printQueue();
   testCCQArr.printQueue();
+  std::cout << "==========================" << std::endl;
+
+  SUList<int> CCTest(intList);
+  CCTest.display();
+  std::cout << "==========================" << std::endl;
+
+  SUList<int> ASSTest;
+  ASSTest.putFront(10);
+  ASSTest.putFront(7);
+  ASSTest.putFront(4);
+  ASSTest.display();
+  CCTest = ASSTest;
+
+  CCTest.display();
+  std::cout << "==========================" << std::endl;
+
+  SUStackList<int> CCSLTest;
+  CCSLTest.push(56);
+  CCSLTest.push(23);
+  CCSLTest.push(78);
+
+  CCSLTest.printStack();
+  CCSLTest = intStackList;
+  CCSLTest.printStack();
+
+
 
 
   return 0;
