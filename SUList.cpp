@@ -125,11 +125,13 @@ bool SUList<DataType>::contains(const DataType& d){// Tests for membership
 	ListNode* crsr = head;
 	while(crsr){
 		if(crsr->data == d){
+			std::cout << "List contains " << d << std::endl;
 			return true;
 		}else{
 			crsr = crsr->next;
 		}
 	}
+	std::cout << "List does not contain " << d << std::endl;
 	return false;
 }
 

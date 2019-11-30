@@ -20,6 +20,7 @@ class PayRoll{
 		string getName() const; //returns name
 		void displayInfo(); //displays name and total pay
 		friend std::ostream& operator<<(std::ostream &out, const PayRoll&);
+		friend bool operator==(const PayRoll& lhs, const PayRoll& rhs);
 	private:
 		string name; //name
 		double payRate; //rate of pay

@@ -61,6 +61,8 @@ int main(){
   pRollCC.putFront(e);
   pRollCC.display(); //<< overload
 
+  pRollCC.contains(e);
+
 
   std::cout << "LHS:" << std::endl;
   pRoll.display(); //<< overload

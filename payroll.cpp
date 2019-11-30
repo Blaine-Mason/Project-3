@@ -42,12 +42,14 @@ void PayRoll::setName(string n)
  * Display info about the employee
  */
 void PayRoll::displayInfo()
-{
+{	
+	cout << endl;
 	cout << "Employee: " << name << endl;
 	cout << "PayRate: " << getRate() << endl;
 	cout << "Total Pay: " << getPay() << "$" << std::endl;
 }
 std::ostream& operator<<(std::ostream &out, const PayRoll& p){
+	out << endl;
 	out << "Employee: " << p.getName() << endl;
 	out << "PayRate: " << p.getRate() << endl;
 	out << "Total Pay: " << p.getPay() << "$" << std::endl;;
@@ -81,4 +83,7 @@ double PayRoll::getHours() const
 string PayRoll::getName() const
 {
 	return name;
+}
+bool operator==(const PayRoll& lhs, const PayRoll& rhs){
+	return (lhs.getName() == rhs.getName()) && (lhs.getHours() == rhs.getHours()) && (lhs.getRate() == rhs.getRate());
 }
