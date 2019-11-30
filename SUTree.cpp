@@ -3,7 +3,7 @@
 template <class DataType>
 SUTree<DataType>::SUTree()
 {
-
+  root = nullptr;
 }
 
 template <class DataType>
@@ -23,15 +23,30 @@ SUTree<DataType>& SUTree<DataType>::operator=(const SUTree<DataType>&)
 {
 
 }
-
 template <class DataType>
-void SUTree<DataType>::insert(const DataType& d)
+void insert(TreeNode *&nodeptr, TreeNode *&newNode){
+  if(nodeptr == nullptr){
+    nodeptr = newNode;
+  }else if(newNode->data < nodeptr->data){
+    insert(nodeptr->left, newNode);
+  }else{
+    inser(nodeptr->right, newNode);
+  }
+}
+template <class DataType>
+void SUTree<DataType>::insertNode(const DataType& d)
 {
+  TreeNdoe* newNode = nullptr;
 
+  newNode = new TreeNode;
+  newNode->data = d;
+  newNode->left = newNode->right = nullptr;
+
+  insert(root, newNode);
 }
 
 template <class DataType>
-typename SUTree<DataType>::TreeNode* SUTree<DataType>::preOrderSearch(const DataType& d) //preOrder searches tree @Luke
+SUTree<DataType>::TreeNode* SUTree<DataType>::preOrderSearch(const DataType& d) //preOrder searches tree @Luke
 {
   if(root->data = d)
     return root;
@@ -42,7 +57,7 @@ typename SUTree<DataType>::TreeNode* SUTree<DataType>::preOrderSearch(const Data
 }
 
 template <class DataType>
-typename SUTree<DataType>::TreeNode* SUTree<DataType>::inOrderSearch(const DataType& d) //inOrder searches tree @Luke
+TreeNode* SUTree<DataType>::inOrderSearch(const DataType& d) //inOrder searches tree @Luke
 {
   preOrderSearch(root->left);
   if(root->data = d)
@@ -53,7 +68,7 @@ typename SUTree<DataType>::TreeNode* SUTree<DataType>::inOrderSearch(const DataT
 }
 
 template <class DataType>
-typename SUTree<DataType>::TreeNode* SUTree<DataType>::postOrderSearch(const DataType& d) //postOrder searches tree @Luke
+TreeNode* SUTree<DataType>::postOrderSearch(const DataType& d) //postOrder searches tree @Luke
 {
   preOrderSearch(root->left);
   preOrderSearch(root->right);

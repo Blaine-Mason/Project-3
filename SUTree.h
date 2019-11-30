@@ -16,7 +16,8 @@ class SUTree{
   ~SUTree();
   SUTree(const SUTree&);
   SUTree<DataType>& operator=(const SUTree<DataType>&);
-  void insert(const DataType&);
+  void insert(TreeNode *&nodeptr, TreeNode *&newNode);
+  void insertNode(const DataType&);
   TreeNode* preOrderSearch(const DataType&);
   TreeNode* inOrderSearch(const DataType&);
   TreeNode* postOrderSearch(const DataType&);
