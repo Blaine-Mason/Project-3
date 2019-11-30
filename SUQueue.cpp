@@ -3,7 +3,7 @@
 
 template <class DataType>
 SUQueueArr<DataType>::SUQueueArr(){ // Constructor
-	capacity = 20;
+	capacity = 50;
 	front = 0;
 	rear = 0;
 	arr = new DataType[capacity];
@@ -137,8 +137,9 @@ void SUQueueList<DataType>::printQueue() const{ // Prints the queue from the fro
 		list.display();
 	}
 }
-
+/*
 template <class DataType>
 SUQueueList<DataType>& SUQueueList<DataType>::operator=(const SUQueueList<DataType>&){ // Assignment operator
 
 }
+*/

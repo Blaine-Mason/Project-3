@@ -11,6 +11,7 @@ SUStackArr<DataType>::SUStackArr(){ // Constructor
 
 template <class DataType>
 SUStackArr<DataType>::SUStackArr(const SUStackArr& rhs){ // Copy Constructor
+  std::cout << "Copy Constructor Called" << std::endl << std::endl;
   capacity = rhs.capacity;
   top = rhs.top;
   arr = new DataType[capacity];
@@ -21,6 +22,7 @@ SUStackArr<DataType>::SUStackArr(const SUStackArr& rhs){ // Copy Constructor
 
 template <class DataType>
 SUStackArr<DataType>::~SUStackArr(){ // Destructor
+  std::cout << "Destructing StackArr..." << std::endl;
   delete[] arr;
 }
 
@@ -59,15 +61,16 @@ void SUStackArr<DataType>::pop(DataType& d){ // Pop an object off the stack and 
 
 template <class DataType>
 void SUStackArr<DataType>::printStack() const{ // Prints the stack from the top, down
-  std::cout << "Stack: ";
+  std::cout << "Stack: " << std::endl;
   for(int i = 0; i < capacity; i++){
-    std::cout << arr[i] << " ";
+    std::cout << arr[i] << std::endl;
   }
   std::cout << std::endl;
 }
 
 template <class DataType>
 SUStackArr<DataType>& SUStackArr<DataType>::operator=(const SUStackArr<DataType>& rhs){ // Assignment operator
+  std::cout << "= Overload Called" << std::endl << std::endl;
   delete[] this->arr;
   capacity = rhs.capacity;
   top = rhs.top;
@@ -83,6 +86,7 @@ DataType* SUStackArr<DataType>::copyArr(DataType* arr, int cap, int t){
   for(int i = 0; i <= t; i++){
     newArr[i] = arr[i];
   }
+  delete[] arr;
   return newArr;
 }
 
@@ -117,7 +121,7 @@ bool SUStackList<DataType>::isEmpty() const{ // Check if the stack is empty
 
 template <class DataType>
 void SUStackList<DataType>::push(const DataType& d){ // Pushes an object onto the stack
-  std::cout << "Pushing " << d << "..." << std::endl;
+  std::cout << "Pushing..." << std::endl << d << std::endl;
   list.putFront(d);
   return;
 }
@@ -125,7 +129,7 @@ void SUStackList<DataType>::push(const DataType& d){ // Pushes an object onto th
 template <class DataType>
 void SUStackList<DataType>::pop(DataType& d){ // Pop an object off the stack and store it
   d = list.getFront();
-  std::cout << "Popping " << d << "..." << std::endl;
+  std::cout << "Popping ..." << std::endl << d << std::endl;
 }
 
 template <class DataType>
@@ -133,8 +137,9 @@ void SUStackList<DataType>::printStack() const{ // Prints the stack from the top
   list.display();
   return;
 }
-
+/*
 template <class DataType>
 SUStackList<DataType>& SUStackList<DataType>::operator=(const SUStackList<DataType>& rhs){ // Assignment operator
 
 }
+*/

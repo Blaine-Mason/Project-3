@@ -8,6 +8,7 @@ SUList<DataType>::SUList(){ // Default ctor
 
 template <class DataType>
 SUList<DataType>::SUList(const SUList& rhs){ // Copy ctor
+	std::cout << "Copy Constructor Called" << std::endl << std::endl;
 	ListNode* crsr = rhs.head;
 
 	int count = 0;
@@ -33,6 +34,7 @@ SUList<DataType>::SUList(const SUList& rhs){ // Copy ctor
 
 template <class DataType>
 SUList<DataType>::~SUList(){ // Destructor
+	std::cout << "Destructing List..." << std::endl;
 	ListNode* crsr = head;
 	while(crsr){
 		ListNode* temp = crsr->next;
@@ -60,7 +62,7 @@ DataType SUList<DataType>::getBack(){ // Remove & return the back
 		tail->next = nullptr;
 		delete temp;
 		return t;
-	}if(!head->next){
+	}else{
 		tail = temp->prev;
 		head = nullptr;
 		delete temp;
@@ -133,6 +135,7 @@ bool SUList<DataType>::contains(const DataType& d){// Tests for membership
 
 template <class DataType>
 SUList<DataType>& SUList<DataType>::operator=(const SUList<DataType>& rhs){ // Overloaded assignment
+	std::cout << "= Overload Called" << std::endl << std::endl;
 	int count = 0;
 	if(this == &rhs){
 		std::cout << "Self Assignment" << std::endl;
@@ -171,9 +174,9 @@ SUList<DataType>& SUList<DataType>::operator=(const SUList<DataType>& rhs){ // O
 template <class DataType>
 void SUList<DataType>::display() const{
 	ListNode* crsr = head;
-	std::cout << "List: ";
+	std::cout << "List: " << std::endl;
 	while(crsr){
-		std::cout << crsr->data << " ";
+		std::cout << crsr->data << std::endl;
 		crsr = crsr->next;
 	}
 	std::cout << std::endl;

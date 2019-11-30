@@ -34,7 +34,7 @@ class SUStackList{
     void push(const DataType&); // Pushes an object onto the stack
     void pop(DataType&); // Pop an object off the stack and store it
     void printStack() const; // Prints the stack from the top, down
-    SUStackList<DataType>& operator=(const SUStackList<DataType>&); // Assignment operator
+    //SUStackList<DataType>& operator=(const SUStackList<DataType>&); // Assignment operator
 };
 #include "SUStack.cpp"
 #endif
