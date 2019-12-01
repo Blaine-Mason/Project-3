@@ -19,6 +19,14 @@ class SUStackArr{
     void pop(DataType&); // Pop an object off the stack and store it
     void printStack() const; // Prints the stack from the top, down
     SUStackArr<DataType>& operator=(const SUStackArr<DataType>&); // Assignment operator
+    friend std::ostream& operator<<(std::ostream &out, const SUStackArr<DataType>& d){
+        std::cout << "Stack: " << std::endl;
+        for(int i = 0; i < d.capacity; i++){
+            out << d.arr[i] << std::endl;
+        }
+            out << std::endl;
+            return out;
+    }
 };
 
 template <class DataType>
@@ -35,6 +43,10 @@ class SUStackList{
     void pop(DataType&); // Pop an object off the stack and store it
     void printStack() const; // Prints the stack from the top, down
     //SUStackList<DataType>& operator=(const SUStackList<DataType>&); // Assignment operator
+    friend std::ostream& operator<<(std::ostream &out, const SUStackList<DataType>& d){
+        d.printStack();
+        return out;
+    }
 };
 #include "SUStack.cpp"
 #endif

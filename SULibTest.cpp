@@ -46,31 +46,31 @@ int main(){
   pRoll.putFront(b);
   pRoll.putBack(c);
   pRoll.putBack(d);
-  pRoll.display(); //<< overload
+  std::cout << pRoll; //<< overload
 
 
   std::cout << "Removing 2 Objects(One from front, One from back)" << std::endl;
   del = pRoll.getFront();
-  pRoll.display(); //<< overload
+  std::cout << pRoll; //<< overload
   del = pRoll.getBack();
-  pRoll.display(); //<< overload
+  std::cout << pRoll; //<< overload
 
 
   SUList<PayRoll> pRollCC(pRoll);
   std::cout << "Adding 1 Object" << std::endl;
   pRollCC.putFront(e);
-  pRollCC.display(); //<< overload
+  std::cout << pRollCC; //<< overload
 
   pRollCC.contains(e);
 
 
   std::cout << "LHS:" << std::endl;
-  pRoll.display(); //<< overload
+  std::cout << pRoll; //<< overload
   pRoll = pRollCC;
   std::cout << "RHS:" << std::endl;
-  pRollCC.display(); //<< overload 
+  std::cout << pRollCC; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  pRoll.display(); //<< overload
+  std::cout << pRoll; //<< overload
 
   std::cout << "String: " << std::endl << std::endl;
   std::cout << "Adding 4 Objects:" << std::endl;
@@ -79,29 +79,29 @@ int main(){
   stringTest.putFront("String 2");
   stringTest.putBack("String 3");
   stringTest.putBack("String 4");
-  stringTest.display(); //<< overload
+  std::cout << stringTest; //<< overload
 
 
   std::cout << "Removing 2 Objects(One from front, One from back)" << std::endl;
   strdel = stringTest.getFront();
-  stringTest.display(); //<< overload
+  std::cout << stringTest; //<< overload
   strdel = stringTest.getBack();
-  stringTest.display(); //<< overload
+  std::cout << stringTest; //<< overload
 
 
   SUList<std::string> stringCC(stringTest);
   std::cout << "Adding 1 Object" << std::endl;
   stringCC.putFront("string 5");
-  stringCC.display(); //<< overload
+  std::cout << stringCC; //<< overload
 
 
   std::cout << "LHS:" << std::endl;
-  stringTest.display(); //<< overload
+  std::cout << stringTest; //<< overload
   stringTest = stringCC;
   std::cout << "RHS:" << std::endl;
-  stringCC.display(); //<< overload 
+  std::cout << stringCC; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  stringTest.display(); //<< overload
+  std::cout << stringTest; //<< overload
 
   /*
   *---------------
@@ -118,29 +118,29 @@ int main(){
   intArr.push(2);
   intArr.push(3);
   intArr.push(4);
-  intArr.printStack(); //<< overload
+  std::cout << intArr; //<< overload
 
 
   std::cout << "Removing 2 Objects" << std::endl;
   intArr.pop(intdel);
-  intArr.printStack(); //<< overload
+  std::cout << intArr; //<< overload
   intArr.pop(intdel);
-  intArr.printStack(); //<< overload
+  std::cout << intArr; //<< overload
 
 
   SUStackArr<int> intCCArr(intArr);
   std::cout << "Adding 1 Object" << std::endl;
   intCCArr.push(5);
-  intCCArr.printStack(); //<< overload
+  std::cout << intCCArr; //<< overload
 
 
   std::cout << "LHS:" << std::endl;
-  intArr.printStack(); //<< overload
+  std::cout << intArr; //<< overload
   intArr = intCCArr;
   std::cout << "RHS:" << std::endl;
-  intCCArr.printStack(); //<< overload 
+  std::cout << intCCArr; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  intArr.printStack(); //<< overload
+  std::cout << intArr; //<< overload
 
 
 
@@ -151,29 +151,29 @@ int main(){
   doubleArr.push(2.02);
   doubleArr.push(3.03);
   doubleArr.push(4.04);
-  doubleArr.printStack(); //<< overload
+  std::cout << doubleArr; //<< overload
 
 
   std::cout << "Removing 2 Objects" << std::endl;
   doubleArr.pop(doubledel);
-  doubleArr.printStack(); //<< overload
+  std::cout << doubleArr; //<< overload
   doubleArr.pop(doubledel);
-  doubleArr.printStack(); //<< overload
+  std::cout << doubleArr; //<< overload
 
 
   SUStackArr<double> doubleCCArr(doubleArr);
   std::cout << "Adding 1 Object" << std::endl;
   doubleCCArr.push(5.05);
-  doubleCCArr.printStack(); //<< overload
+  std::cout << doubleCCArr; //<< overload
 
 
   std::cout << "LHS:" << std::endl;
-  doubleArr.printStack(); //<< overload
+  std::cout << doubleArr; //<< overload
   doubleArr = doubleCCArr;
   std::cout << "RHS:" << std::endl;
-  doubleCCArr.printStack(); //<< overload 
+  std::cout << doubleCCArr; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  doubleArr.printStack(); //<< overload
+  std::cout << doubleArr; //<< overload
 
 
   /*
@@ -191,29 +191,29 @@ int main(){
   pRollStack.push(b);
   pRollStack.push(c);
   pRollStack.push(d);
-  pRollStack.printStack(); //<< overload
+  std::cout << pRollStack; //<< overload
 
 
   std::cout << "Removing 2 Objects" << std::endl;
   pRollStack.pop(del);
-  pRollStack.printStack(); //<< overload
+  std::cout << pRollStack; //<< overload
   pRollStack.pop(del);
-  pRollStack.printStack(); //<< overload
+  std::cout << pRollStack; //<< overload
 
 
   SUStackList<PayRoll> pRollCCList(pRollStack);
   std::cout << "Adding 1 Object" << std::endl;
   pRollCCList.push(e);
-  pRollCCList.printStack(); //<< overload
+  std::cout << pRollCCList; //<< overload
 
 
   std::cout << "LHS:" << std::endl;
-  pRollStack.printStack(); //<< overload
+  std::cout << pRollStack; //<< overload
   pRollStack = pRollCCList;
   std::cout << "RHS:" << std::endl;
-  pRollCCList.printStack(); //<< overload 
+  std::cout << pRollCCList; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  pRollStack.printStack(); //<< overload
+  std::cout << pRollStack; //<< overload
 
   std::cout << "String: " << std::endl << std::endl;
   std::cout << "Adding 4 Objects:" << std::endl;
@@ -222,29 +222,29 @@ int main(){
   stringTestList.push("String 2");
   stringTestList.push("String 3");
   stringTestList.push("String 4");
-  stringTestList.printStack(); //<< overload
+  std::cout << stringTestList; //<< overload
 
 
   std::cout << "Removing 2 Objects(One from front, One from back)" << std::endl;
   stringTestList.pop(strdel);
-  stringTestList.printStack(); //<< overload
+  std::cout << stringTestList; //<< overload
   stringTestList.pop(strdel);
-  stringTestList.printStack(); //<< overload
+  std::cout << stringTestList; //<< overload
 
 
   SUStackList<std::string> stringCCList(stringTestList);
   std::cout << "Adding 1 Object" << std::endl;
   stringCCList.push("string 5");
-  stringCCList.printStack(); //<< overload
+  std::cout << stringCCList; //<< overload
 
 
   std::cout << "LHS:" << std::endl;
-  stringTestList.printStack(); //<< overload
+  std::cout << stringTestList; //<< overload
   stringTestList = stringCCList;
   std::cout << "RHS:" << std::endl;
-  stringCCList.printStack(); //<< overload 
+  std::cout << stringCCList; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  stringTestList.printStack(); //<< overload
+  std::cout << stringTestList; //<< overload
 
 
   /*
@@ -262,29 +262,29 @@ int main(){
   intQ.enqueue(2);
   intQ.enqueue(3);
   intQ.enqueue(4);
-  intQ.printQueue(); //<< overload
+  std::cout << intQ; //<< overload
 
 
   std::cout << "Removing 2 Objects" << std::endl;
   intQ.dequeue(intdel);
   intQ.printQueue(); //<< overload
   intQ.dequeue(intdel);
-  intQ.printQueue(); //<< overload
+  std::cout << intQ; //<< overload
 
 
   SUQueueArr<int> intCCQ(intQ);
   std::cout << "Adding 1 Object" << std::endl;
   intCCQ.enqueue(5);
-  intCCQ.printQueue(); //<< overload
+  std::cout << intCCQ; //<< overload
 
 
   std::cout << "LHS:" << std::endl;
-  intQ.printQueue(); //<< overload
+  std::cout << intQ; //<< overload
   intQ = intCCQ;
   std::cout << "RHS:" << std::endl;
-  intCCQ.printQueue(); //<< overload 
+  std::cout << intCCQ; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  intQ.printQueue(); //<< overload
+  std::cout << intQ; //<< overload
 
 
 
@@ -295,29 +295,29 @@ int main(){
   doubleQ.enqueue(2.02);
   doubleQ.enqueue(3.03);
   doubleQ.enqueue(4.04);
-  doubleQ.printQueue(); //<< overload
+  std::cout << doubleQ; //<< overload
 
 
   std::cout << "Removing 2 Objects" << std::endl;
   doubleQ.dequeue(doubledel);
-  doubleQ.printQueue(); //<< overload
+  std::cout << doubleQ; //<< overload
   doubleQ.dequeue(doubledel);
-  doubleQ.printQueue(); //<< overload
+  std::cout << doubleQ; //<< overload
 
 
   SUQueueArr<double> doubleCCQ(doubleQ);
   std::cout << "Adding 1 Object" << std::endl;
   doubleCCQ.enqueue(5.05);
-  doubleCCQ.printQueue(); //<< overload
+  std::cout << doubleCCQ; //<< overload
 
 
   std::cout << "LHS:" << std::endl;
-  doubleQ.printQueue(); //<< overload
+  std::cout << doubleQ; //<< overload
   doubleQ = doubleCCQ;
   std::cout << "RHS:" << std::endl;
-  doubleCCQ.printQueue(); //<< overload 
+  std::cout << doubleCCQ; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  doubleQ.printQueue(); //<< overload
+  std::cout << doubleQ; //<< overload
 
 
 
@@ -336,29 +336,29 @@ int main(){
   pRollQ.enqueue(b);
   pRollQ.enqueue(c);
   pRollQ.enqueue(d);
-  pRollQ.printQueue(); //<< overload
+  std::cout << pRollQ; //<< overload
 
 
   std::cout << "Removing 2 Objects" << std::endl;
   pRollQ.dequeue(del);
-  pRollQ.printQueue(); //<< overload
+  std::cout << pRollQ; //<< overload
   pRollQ.dequeue(del);
-  pRollQ.printQueue(); //<< overload
+  std::cout << pRollQ; //<< overload
 
 
   SUQueueList<PayRoll> pRollCCQ(pRollQ);
   std::cout << "Adding 1 Object" << std::endl;
   pRollCCQ.enqueue(e);
-  pRollCCQ.printQueue(); //<< overload
+  std::cout << pRollCCQ; //<< overload
 
 
   std::cout << "LHS:" << std::endl;
-  pRollQ.printQueue(); //<< overload
+  std::cout << pRollQ; //<< overload
   pRollQ = pRollCCQ;
   std::cout << "RHS:" << std::endl;
-  pRollCCQ.printQueue(); //<< overload 
+  std::cout << pRollCCQ; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  pRollQ.printQueue(); //<< overload
+  std::cout << pRollQ; //<< overload
 
   std::cout << "String: " << std::endl << std::endl;
   std::cout << "Adding 4 Objects:" << std::endl;
@@ -367,29 +367,29 @@ int main(){
   stringTestQ.enqueue("String 2");
   stringTestQ.enqueue("String 3");
   stringTestQ.enqueue("String 4");
-  stringTestQ.printQueue(); //<< overload
+  std::cout << stringTestQ; //<< overload
 
 
   std::cout << "Removing 2 Objects" << std::endl;
   stringTestQ.dequeue(strdel);
-  stringTestQ.printQueue(); //<< overload
+  std::cout << stringTestQ; //<< overload
   stringTestQ.dequeue(strdel);
-  stringTestQ.printQueue(); //<< overload
+  std::cout << stringTestQ; //<< overload
 
 
   SUQueueList<std::string> stringCCQ(stringTestQ);
   std::cout << "Adding 1 Object" << std::endl;
   stringCCQ.enqueue("string 5");
-  stringCCQ.printQueue(); //<< overload
+  std::cout << stringCCQ; //<< overload
 
 
   std::cout << "LHS:" << std::endl;
-  stringTestQ.printQueue(); //<< overload
+  std::cout << stringTestQ; //<< overload
   stringTestQ = stringCCQ;
   std::cout << "RHS:" << std::endl;
-  stringCCQ.printQueue(); //<< overload 
+  std::cout << stringCCQ; //<< overload 
   std::cout << "LHS After Assignment:" << std::endl;
-  stringTestQ.printQueue(); //<< overload
+  std::cout << stringTestQ; //<< overload
 
   return 0;
 }

@@ -172,7 +172,6 @@ SUList<DataType>& SUList<DataType>::operator=(const SUList<DataType>& rhs){ // O
 	}
 
 }
-
 template <class DataType>
 void SUList<DataType>::display() const{
 	ListNode* crsr = head;

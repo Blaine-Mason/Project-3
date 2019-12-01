@@ -19,6 +19,19 @@ class SUQueueArr{
     void dequeue(DataType&); // Get the front element and store it
     void printQueue() const; // Prints the queue from the front to the rear
     SUQueueArr<DataType>& operator=(const SUQueueArr<DataType>&); // Assignment operator
+    friend std::ostream& operator<<(std::ostream &out, const SUQueueArr<DataType>& d){
+        if(d.front == d.rear){
+            out << "Queue is Empty" << std::endl;
+            return out;
+        }else{
+            out << "Queue: ";
+            for(int i = 0; i < d.rear; i++){
+                out << d.arr[i] << " ";
+            }
+            out << std::endl;
+            return out;
+        }
+    }
 };
 
 template <class DataType>
@@ -35,6 +48,15 @@ class SUQueueList{
     void dequeue(DataType&); // Get the front element and store it
     void printQueue() const; // Prints the queue from the front to the rear
     //SUQueueList<DataType>& operator=(const SUQueueList<DataType>&); // Assignment operator
+    friend std::ostream& operator<<(std::ostream &out, const SUQueueList<DataType>& d){
+        if(d.isEmpty()){
+            out << "Queue is Empty" << std::endl;
+            return out;
+        }else{
+            d.printQueue();
+            return out;
+        }
+    }
 };
 #include "SUQueue.cpp"
 #endif

@@ -11,7 +11,7 @@ PayRoll::PayRoll()
 /*
  *Assigns name and payRate their associated parameters
  */
-PayRoll::PayRoll(string str, double rate, double hrs)
+PayRoll::PayRoll(std::string str, double rate, double hrs)
 {
 	name = str;
 	payRate = rate;
@@ -34,7 +34,7 @@ void PayRoll::setRate(double r8)
 /*
  * Set the name for this employee
  */
-void PayRoll::setName(string n)
+void PayRoll::setName(std::string n)
 {
 	name = n;
 }
@@ -43,15 +43,15 @@ void PayRoll::setName(string n)
  */
 void PayRoll::displayInfo()
 {	
-	cout << endl;
-	cout << "Employee: " << name << endl;
-	cout << "PayRate: " << getRate() << endl;
-	cout << "Total Pay: " << getPay() << "$" << std::endl;
+	std::cout << std::endl;
+	std::cout << "Employee: " << name << std::endl;
+	std::cout << "PayRate: " << getRate() << std::endl;
+	std::cout << "Total Pay: " << getPay() << "$" << std::endl;
 }
 std::ostream& operator<<(std::ostream &out, const PayRoll& p){
-	out << endl;
-	out << "Employee: " << p.getName() << endl;
-	out << "PayRate: " << p.getRate() << endl;
+	out << std::endl;
+	out << "Employee: " << p.getName() << std::endl;
+	out << "PayRate: " << p.getRate() << std::endl;
 	out << "Total Pay: " << p.getPay() << "$" << std::endl;;
 	return out;
 }
@@ -80,7 +80,7 @@ double PayRoll::getHours() const
 /*
  * Gets the Name of the employee
  */
-string PayRoll::getName() const
+std::string PayRoll::getName() const
 {
 	return name;
 }

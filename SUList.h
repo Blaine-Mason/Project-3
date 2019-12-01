@@ -24,6 +24,16 @@ class SUList{
     bool contains(const DataType&);// Tests for membership
     void display() const; //Displays List
     SUList<DataType>& operator=(const SUList<DataType>&); // Overloaded assignment
+    friend std::ostream& operator<<(std::ostream &out, const SUList<DataType>& d){
+      ListNode* crsr = d.head;
+      out << "List: " << std::endl;
+      while(crsr){
+        out << crsr->data << std::endl;
+        crsr = crsr->next;
+      }
+      out << std::endl;
+      return out;
+    }
 };
 #include "SUList.cpp"
 #endif
