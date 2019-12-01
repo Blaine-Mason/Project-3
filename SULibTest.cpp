@@ -3,6 +3,7 @@
 #include "SUList.h"
 #include "SUStack.h"
 #include "SUQueue.h"
+#include "SUTree.h"
 #include "payroll.h"
 
 
