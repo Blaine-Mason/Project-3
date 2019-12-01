@@ -40,7 +40,7 @@ SUList<DataType>::~SUList(){ // Destructor
 		ListNode* temp = crsr->next;
 		delete crsr;
 		crsr = temp;
-		
+
 	}
 }
 
@@ -170,7 +170,38 @@ SUList<DataType>& SUList<DataType>::operator=(const SUList<DataType>& rhs){ // O
 		}
 		return *this;
 	}
-
+}
+template <class DataType>
+DataType SUList<DataType>::operator[](const int index){
+	int count = 0;
+	ListNode* crsr = this->head;
+	while(crsr){
+		count++;
+		crsr = crsr->next;
+	}
+	if(abs(index) < count){
+		if(index < 0){
+			if(this->head){
+				ListNode* crsr = this->tail;
+				for(int i = 1; i < abs(index); i++){
+					crsr = crsr->prev;
+				}
+				return crsr->data;
+			}
+		}else{
+			if(this->head){
+				ListNode* crsr = this->head;
+				for(int i = 0; i < index; i++){
+					crsr = crsr->next;
+				}
+				return crsr->data;
+			}
+		}
+	}else{
+		std::cout << "Index Out of Bounds" << std::endl;
+		DataType d;
+		return d;
+	}
 }
 template <class DataType>
 void SUList<DataType>::display() const{

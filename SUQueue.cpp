@@ -100,28 +100,28 @@ SUQueueList<DataType>::SUQueueList(const SUQueueList &){ // Copy Constructor
 }
 
 template <class DataType>
-SUQueueList<DataType>::~SUQueueList(){ // Destructor
-
+SUQueueList<DataType>::~SUQueueList(){ // Destructor @Luke
+	
 }
 
 template <class DataType>
-int SUQueueList<DataType>::size() const{ // get the number of elements in the queue
+int SUQueueList<DataType>::size() const{ // get the number of elements in the queue @Luke
 	return list.size();
 }
 
 template <class DataType>
-bool SUQueueList<DataType>::isEmpty() const{ // Check if the queue is empty
+bool SUQueueList<DataType>::isEmpty() const{ // Check if the queue is empty @Luke
 	return list.size() == 0;
 }
 
 template <class DataType>
-void SUQueueList<DataType>::enqueue(const DataType& d){ // Enqueues some data
+void SUQueueList<DataType>::enqueue(const DataType& d){ // Enqueues some data @Luke
 	std::cout << "Enqueuing " << d << "..." << std::endl;
 	list.putBack(d);
 }
 
 template <class DataType>
-void SUQueueList<DataType>::dequeue(DataType& d){ // Get the front element and store it
+void SUQueueList<DataType>::dequeue(DataType& d){ // Get the front element and store it @Luke
 	if(!isEmpty())
 		d = list.getFront();
 		std::cout << "Dequeuing " << d << "..." << std::endl;
@@ -129,7 +129,7 @@ void SUQueueList<DataType>::dequeue(DataType& d){ // Get the front element and s
 }
 
 template <class DataType>
-void SUQueueList<DataType>::printQueue() const{ // Prints the queue from the front to the rear
+void SUQueueList<DataType>::printQueue() const{ // Prints the queue from the front to the rear @Luke
 	if(isEmpty()){
 		std::cout << "Queue is Empty" << std::endl;
 		return;

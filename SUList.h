@@ -1,6 +1,8 @@
 #ifndef SULIST_H
 #define SULIST_H
 
+
+
 template <class DataType>
 class SUList{
   private:
@@ -12,13 +14,13 @@ class SUList{
     ListNode* head; // The front of the list
     ListNode* tail; // The last node of the list
   public:
-    SUList(); // Default constructor
-    SUList(const SUList&); // Copy constructor
+    SUList(); // Default ctor
+    SUList(const SUList&); // Copy ctor
     ~SUList(); // Destructor
     DataType getFront(); // Remove & return the front
     DataType getBack(); // Remove & return the back
     void putFront(const DataType&);// Add to the front
-    void putBack(const DataType&);  // Add to the back
+    void putBack(const DataType&); // Add to the back
     int size() const; // Returns the number of elements
     bool contains(const DataType&);// Tests for membership
     void display() const; //Displays List
@@ -33,7 +35,7 @@ class SUList{
       out << std::endl;
       return out;
     }
+    DataType operator[](const int);
 };
-
 #include "SUList.cpp"
 #endif
