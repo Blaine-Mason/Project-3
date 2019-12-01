@@ -1,4 +1,5 @@
 #include<iostream>
+#include <stdlib.h>
 #include "SUList.h"
 #include "SUStack.h"
 #include "SUQueue.h"
@@ -15,10 +16,10 @@ int main(){
   Each test will perform the following operations in order with Prints following each test
   (psuedo terminology, add = enqueue, push; remove = dequeue, pop)
     -Add 4 Elements of each type.
-    -Remove 2 elements 
+    -Remove 2 elements
     -Perform a CC
     -Add one element to the newly CC'd
-    -Perform an old = CC 
+    -Perform an old = CC
   */
   PayRoll a("Test A", 15, 20);
   PayRoll b("Test B", 45, 30);
@@ -33,7 +34,7 @@ int main(){
 
   /*
   *---------------
-  * SUList 
+  * SUList
   *---------------
   */
   std::cout << "===========================" << std::endl;
@@ -68,7 +69,7 @@ int main(){
   std::cout << pRoll; //<< overload
   pRoll = pRollCC;
   std::cout << "RHS:" << std::endl;
-  std::cout << pRollCC; //<< overload 
+  std::cout << pRollCC; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << pRoll; //<< overload
 
@@ -99,13 +100,13 @@ int main(){
   std::cout << stringTest; //<< overload
   stringTest = stringCC;
   std::cout << "RHS:" << std::endl;
-  std::cout << stringCC; //<< overload 
+  std::cout << stringCC; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << stringTest; //<< overload
 
   /*
   *---------------
-  * SUStackArr 
+  * SUStackArr
   *---------------
   */
   std::cout << "===========================" << std::endl;
@@ -138,7 +139,7 @@ int main(){
   std::cout << intArr; //<< overload
   intArr = intCCArr;
   std::cout << "RHS:" << std::endl;
-  std::cout << intCCArr; //<< overload 
+  std::cout << intCCArr; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << intArr; //<< overload
 
@@ -171,7 +172,7 @@ int main(){
   std::cout << doubleArr; //<< overload
   doubleArr = doubleCCArr;
   std::cout << "RHS:" << std::endl;
-  std::cout << doubleCCArr; //<< overload 
+  std::cout << doubleCCArr; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << doubleArr; //<< overload
 
@@ -211,7 +212,7 @@ int main(){
   std::cout << pRollStack; //<< overload
   pRollStack = pRollCCList;
   std::cout << "RHS:" << std::endl;
-  std::cout << pRollCCList; //<< overload 
+  std::cout << pRollCCList; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << pRollStack; //<< overload
 
@@ -242,14 +243,14 @@ int main(){
   std::cout << stringTestList; //<< overload
   stringTestList = stringCCList;
   std::cout << "RHS:" << std::endl;
-  std::cout << stringCCList; //<< overload 
+  std::cout << stringCCList; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << stringTestList; //<< overload
 
 
   /*
   *---------------
-  * SUQueueArr  
+  * SUQueueArr
   *---------------
   */
   std::cout << "===========================" << std::endl;
@@ -282,7 +283,7 @@ int main(){
   std::cout << intQ; //<< overload
   intQ = intCCQ;
   std::cout << "RHS:" << std::endl;
-  std::cout << intCCQ; //<< overload 
+  std::cout << intCCQ; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << intQ; //<< overload
 
@@ -315,7 +316,7 @@ int main(){
   std::cout << doubleQ; //<< overload
   doubleQ = doubleCCQ;
   std::cout << "RHS:" << std::endl;
-  std::cout << doubleCCQ; //<< overload 
+  std::cout << doubleCCQ; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << doubleQ; //<< overload
 
@@ -356,7 +357,7 @@ int main(){
   std::cout << pRollQ; //<< overload
   pRollQ = pRollCCQ;
   std::cout << "RHS:" << std::endl;
-  std::cout << pRollCCQ; //<< overload 
+  std::cout << pRollCCQ; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << pRollQ; //<< overload
 
@@ -387,7 +388,7 @@ int main(){
   std::cout << stringTestQ; //<< overload
   stringTestQ = stringCCQ;
   std::cout << "RHS:" << std::endl;
-  std::cout << stringCCQ; //<< overload 
+  std::cout << stringCCQ; //<< overload
   std::cout << "LHS After Assignment:" << std::endl;
   std::cout << stringTestQ; //<< overload
 

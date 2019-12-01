@@ -2,6 +2,7 @@
 #define SULIST_H
 
 
+
 template <class DataType>
 class SUList{
   private:
@@ -34,6 +35,7 @@ class SUList{
       out << std::endl;
       return out;
     }
+    DataType operator[](const int);
 };
 #include "SUList.cpp"
 #endif
