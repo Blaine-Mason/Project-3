@@ -44,8 +44,8 @@ class SUStackList{
     void printStack() const; // Prints the stack from the top, down
     //SUStackList<DataType>& operator=(const SUStackList<DataType>&); // Assignment operator
     friend std::ostream& operator<<(std::ostream &out, const SUStackList<DataType>& d){
-        d.printStack();
-        return out;
+      d.printStack();
+      return out;
     }
 };
 #include "SUStack.cpp"

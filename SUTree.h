@@ -1,9 +1,10 @@
 #ifndef SUTREE_H
 #define SUTREE_H
 
+
 template <class DataType>
 class SUTree{
-//private:
+private:
   struct TreeNode{
     DataType data;
     TreeNode* left;
@@ -11,17 +12,18 @@ class SUTree{
     TreeNode* right;
   };
   TreeNode* root;
-//public:
+public:
   SUTree();
   ~SUTree();
-  SUTree(const SUTree&);
-  SUTree<DataType>& operator=(const SUTree<DataType>&);
-  void insert(TreeNode *&nodeptr, TreeNode *&newNode);
+  void insert(TreeNode*&, TreeNode*&);
   void insertNode(const DataType&);
-  TreeNode* preOrderSearch(const DataType&);
-  TreeNode* inOrderSearch(const DataType&);
-  TreeNode* postOrderSearch(const DataType&);
+  SUTree<DataType>* preOrderSearch(const DataType&);
+  SUTree<DataType>* inOrderSearch(const DataType&);
+  SUTree<DataType>* postOrderSearch(const DataType&);
   void remove(DataType&);
+  void destroySubTree(TreeNode*);
+  void deleteNode(DataType, TreeNode *&);
+  void makeDeletion(TreeNode *&);
 };
-
+#include "SUTree.cpp"
 #endif

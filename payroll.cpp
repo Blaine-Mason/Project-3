@@ -7,7 +7,6 @@ PayRoll::PayRoll()
 {
 	name = "no name";
 	payRate = 0.0;
-	hours = 0;
 }
 /*
  *Assigns name and payRate their associated parameters
@@ -43,7 +42,7 @@ void PayRoll::setName(std::string n)
  * Display info about the employee
  */
 void PayRoll::displayInfo()
-{
+{	
 	std::cout << std::endl;
 	std::cout << "Employee: " << name << std::endl;
 	std::cout << "PayRate: " << getRate() << std::endl;

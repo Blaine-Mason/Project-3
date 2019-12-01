@@ -1,0 +1,66 @@
+Luke Engle, Blaine Mason
+Computer Science II (COSC 220)
+
+Project 3
+
+Files:
+  payroll.cpp
+  SULibTest.cpp
+  SUList.cpp
+  SUQueue.cpp
+  SUStack.cpp
+  SUTree.cpp
+
+=============
+payroll.cpp
+=============
+A basic payroll class with data members for name, pay rate, and number of hours
+worked. Objects of this class may be used with any of the included list types.
+
+=============
+SULibTest.cpp
+=============
+Driver file. It contains the main function which displays all tests for the
+following list files.
+
+=============
+SUList.cpp
+=============
+A templated doubly-linked list. Items can be appended to or retrieved from its
+front or back. It also serves as the basis for class SUQueueList.
+
+=============
+SUQueue.cpp
+=============
+Contains two templated classes, SUQueueArr and SUQueueList. The former contains
+an array data member to which items may only be appended to the front or
+retrieved from the back (follows FIFO principle). The latter contains an SUList
+object which is restricted to work as a queue.
+
+=============
+SUStack.cpp
+=============
+Contains two templated classes, SUStackArr and SUStackList. The former contains
+an array data member which follows the LIFO principle, and the latter contains
+a list data member that is restricted to work as a stack.
+
+=============
+SUTree.cpp
+=============
+Templated binary search tree with functions to insert, delete, and search
+pre-order, in-order, and post-order.
+
+
+
+Bonus features implemented:
+  Overloaded output stream operators for all classes
+  Overloaded [] operator for SUList
+  Method to sort the SUList by using the comparison operator for DataType
+  Re-implementation of Project 1
+  Re-implementation of Project 2
+  Binary search tree
+
+
+
+Problem-solving approaches:
+  
