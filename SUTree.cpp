@@ -36,40 +36,23 @@ void SUTree<DataType>::insertNode(const DataType& d)
 }
 
 template <class DataType>
-SUTree<DataType>* SUTree<DataType>::preOrderSearch(const DataType& d) //preOrder searches tree
-{
-  if(root->data = d)
-    return root;
-  preOrderSearch(root->left);
-  preOrderSearch(root->right);
-  SUTree<DataType>::TreeNode* newNode;
-  return newNode;
+bool SUTree<DataType>::searchNode(DataType item){
+  TreeNode *nodePtr = root;
+
+  while(nodePtr){
+    if(nodePtr->data == item){
+      return true;
+    }else if (item < nodePtr->data){
+      nodePtr = nodePtr->left;
+    }else{
+      nodePtr = nodePtr->right;
+    }
+  }
+  return false;
 }
 
 template <class DataType>
-SUTree<DataType>* SUTree<DataType>::inOrderSearch(const DataType& d) //inOrder searches tree
-{
-  preOrderSearch(root->left);
-  if(root->data = d)
-    return root;
-  preOrderSearch(root->right);
-  SUTree<DataType>::TreeNode* newNode;
-  return newNode;
-}
-
-template <class DataType>
-SUTree<DataType>* SUTree<DataType>::postOrderSearch(const DataType& d) //postOrder searches tree
-{
-  preOrderSearch(root->left);
-  preOrderSearch(root->right);
-  if(root->data = d)
-    return root;
-  SUTree<DataType>::TreeNode* newNode;
-  return newNode;
-}
-
-template <class DataType>
-void SUTree<DataType>::remove(DataType& d) //unfinished
+void SUTree<DataType>::remove(DataType& d)
 {
   deleteNode(d, root);
 }
@@ -128,3 +111,31 @@ void SUTree<DataType>::makeDeletion(TreeNode*& nodePtr)
     delete tempNodePtr;
   }
 }
+
+template <class DataType>
+void SUTree<DataType>::displayInOrder(TreeNode* nodePtr) const{
+  if(nodePtr){  
+    displayInOrder(nodePtr->left);
+    std::cout << nodePtr->data << "->";
+    displayInOrder(nodePtr->right);
+  }
+}
+
+template <class DataType>
+void SUTree<DataType>::displayPreOrder(TreeNode* nodePtr) const{
+  if(nodePtr){
+    std::cout << nodePtr->data << "->";
+    displayPreOrder(nodePtr->left);
+    displayPreOrder(nodePtr->right);
+  }
+}
+
+template <class DataType>
+void SUTree<DataType>::displayPostOrder(TreeNode* nodePtr) const{
+  if(nodePtr){
+    displayPostOrder(nodePtr->left);
+    displayPostOrder(nodePtr->right);
+    std::cout << nodePtr->data << "->";
+  }
+}
+

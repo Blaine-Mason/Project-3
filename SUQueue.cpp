@@ -91,37 +91,37 @@ SUQueueArr<DataType>& SUQueueArr<DataType>::operator=(const SUQueueArr<DataType>
 
 template <class DataType>
 SUQueueList<DataType>::SUQueueList(){ // Constructor
-
 }
 
 template <class DataType>
-SUQueueList<DataType>::SUQueueList(const SUQueueList &){ // Copy Constructor
-
+SUQueueList<DataType>::SUQueueList(const SUQueueList &rhs){ // Copy Constructor
+	std::cout << "Copy Constructor Called" << std::endl << std::endl;
+	*this = rhs;
 }
 
 template <class DataType>
-SUQueueList<DataType>::~SUQueueList(){ // Destructor @Luke
+SUQueueList<DataType>::~SUQueueList(){ // Destructor    
 	
 }
 
 template <class DataType>
-int SUQueueList<DataType>::size() const{ // get the number of elements in the queue @Luke
+int SUQueueList<DataType>::size() const{ // get the number of elements in the queue    
 	return list.size();
 }
 
 template <class DataType>
-bool SUQueueList<DataType>::isEmpty() const{ // Check if the queue is empty @Luke
+bool SUQueueList<DataType>::isEmpty() const{ // Check if the queue is empty    
 	return list.size() == 0;
 }
 
 template <class DataType>
-void SUQueueList<DataType>::enqueue(const DataType& d){ // Enqueues some data @Luke
+void SUQueueList<DataType>::enqueue(const DataType& d){ // Enqueues some data    
 	std::cout << "Enqueuing " << d << "..." << std::endl;
 	list.putBack(d);
 }
 
 template <class DataType>
-void SUQueueList<DataType>::dequeue(DataType& d){ // Get the front element and store it @Luke
+void SUQueueList<DataType>::dequeue(DataType& d){ // Get the front element and store it    
 	if(!isEmpty())
 		d = list.getFront();
 		std::cout << "Dequeuing " << d << "..." << std::endl;
@@ -129,7 +129,7 @@ void SUQueueList<DataType>::dequeue(DataType& d){ // Get the front element and s
 }
 
 template <class DataType>
-void SUQueueList<DataType>::printQueue() const{ // Prints the queue from the front to the rear @Luke
+void SUQueueList<DataType>::printQueue() const{ // Prints the queue from the front to the rear    
 	if(isEmpty()){
 		std::cout << "Queue is Empty" << std::endl;
 		return;
@@ -137,9 +137,3 @@ void SUQueueList<DataType>::printQueue() const{ // Prints the queue from the fro
 		list.display();
 	}
 }
-/*
-template <class DataType>
-SUQueueList<DataType>& SUQueueList<DataType>::operator=(const SUQueueList<DataType>&){ // Assignment operator
-
-}
-*/

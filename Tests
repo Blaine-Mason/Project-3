@@ -1,0 +1,830 @@
+==8159== Memcheck, a memory error detector
+==8159== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==8159== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==8159== Command: ./run
+==8159== 
+===========================
+|       SUList Tests      |
+===========================
+PayRoll:
+
+Adding 4 Objects:
+List: 
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+Removing 2 Objects(One from front, One from back)
+List: 
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+List: 
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Copy Constructor Called
+
+Adding 1 Object
+List: 
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+List contains 
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+LHS:
+List: 
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+= Overload Called
+
+RHS:
+List: 
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+LHS After Assignment:
+List: 
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+String: 
+
+Adding 4 Objects:
+List: 
+String 2
+String 1
+String 3
+String 4
+
+Removing 2 Objects(One from front, One from back)
+List: 
+String 1
+String 3
+String 4
+
+List: 
+String 1
+String 3
+
+Copy Constructor Called
+
+Adding 1 Object
+List: 
+string 5
+String 1
+String 3
+
+LHS:
+List: 
+String 1
+String 3
+
+= Overload Called
+
+RHS:
+List: 
+string 5
+String 1
+String 3
+
+LHS After Assignment:
+List: 
+string 5
+String 1
+String 3
+
+===========================
+|     SUStackArr Tests    |
+===========================
+Int:
+
+Adding 4 Objects:
+Pushing: 1
+Pushing: 2
+Pushing: 3
+Pushing: 4
+Stack: 
+1
+2
+3
+4
+
+Removing 2 Objects
+Popping: 4
+Stack: 
+1
+2
+3
+
+Popping: 3
+Stack: 
+1
+2
+
+Copy Constructor Called
+
+Adding 1 Object
+Pushing: 5
+Stack: 
+1
+2
+5
+
+LHS:
+Stack: 
+1
+2
+
+= Overload Called
+
+RHS:
+Stack: 
+1
+2
+5
+
+LHS After Assignment:
+Stack: 
+1
+2
+5
+
+Double: 
+
+Adding 4 Objects:
+Pushing: 1.01
+Pushing: 2.02
+Pushing: 3.03
+Pushing: 4.04
+Stack: 
+1.01
+2.02
+3.03
+4.04
+
+Removing 2 Objects
+Popping: 4.04
+Stack: 
+1.01
+2.02
+3.03
+
+Popping: 3.03
+Stack: 
+1.01
+2.02
+
+Copy Constructor Called
+
+Adding 1 Object
+Pushing: 5.05
+Stack: 
+1.01
+2.02
+5.05
+
+LHS:
+Stack: 
+1.01
+2.02
+
+= Overload Called
+
+RHS:
+Stack: 
+1.01
+2.02
+5.05
+
+LHS After Assignment:
+Stack: 
+1.01
+2.02
+5.05
+
+===========================
+|    SUStackList Tests    |
+===========================
+PayRoll:
+
+Adding 4 Objects:
+Pushing...
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+Pushing...
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+Pushing...
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+Pushing...
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+List: 
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Removing 2 Objects
+Popping ...
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+List: 
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Popping ...
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+List: 
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Copy Constructor Called
+
+= Overload Called
+
+Adding 1 Object
+Pushing...
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+List: 
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+LHS:
+List: 
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+= Overload Called
+
+RHS:
+List: 
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+LHS After Assignment:
+List: 
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+String: 
+
+Adding 4 Objects:
+Pushing...
+String 1
+Pushing...
+String 2
+Pushing...
+String 3
+Pushing...
+String 4
+List: 
+String 4
+String 3
+String 2
+String 1
+
+Removing 2 Objects(One from front, One from back)
+Popping ...
+String 4
+List: 
+String 3
+String 2
+String 1
+
+Popping ...
+String 3
+List: 
+String 2
+String 1
+
+Copy Constructor Called
+
+= Overload Called
+
+Adding 1 Object
+Pushing...
+string 5
+List: 
+string 5
+String 2
+String 1
+
+LHS:
+List: 
+String 2
+String 1
+
+= Overload Called
+
+RHS:
+List: 
+string 5
+String 2
+String 1
+
+LHS After Assignment:
+List: 
+string 5
+String 2
+String 1
+
+===========================
+|     SUQueueArr Tests    |
+===========================
+Int:
+
+Adding 4 Objects:
+Queue: 1 2 3 4 
+Removing 2 Objects
+Queue: 2 3 4 
+Queue: 3 4 
+Adding 1 Object
+Queue: 3 4 5 
+LHS:
+Queue: 3 4 
+RHS:
+Queue: 3 4 5 
+LHS After Assignment:
+Queue: 3 4 5 
+Double: 
+
+Adding 4 Objects:
+Queue: 1.01 2.02 3.03 4.04 
+Removing 2 Objects
+Queue: 2.02 3.03 4.04 
+Queue: 3.03 4.04 
+Adding 1 Object
+Queue: 3.03 4.04 5.05 
+LHS:
+Queue: 3.03 4.04 
+RHS:
+Queue: 3.03 4.04 5.05 
+LHS After Assignment:
+Queue: 3.03 4.04 5.05 
+===========================
+|     SUQueueList Tests   |
+===========================
+PayRoll:
+
+Adding 4 Objects:
+Enqueuing 
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+...
+Enqueuing 
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+...
+Enqueuing 
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+...
+Enqueuing 
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+...
+List: 
+
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+Removing 2 Objects
+Dequeuing 
+Employee: Test A
+PayRate: 15
+Total Pay: 300$
+...
+List: 
+
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+Dequeuing 
+Employee: Test B
+PayRate: 45
+Total Pay: 1350$
+...
+List: 
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+Copy Constructor Called
+
+= Overload Called
+
+Adding 1 Object
+Enqueuing 
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+...
+List: 
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+
+LHS:
+List: 
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+= Overload Called
+
+RHS:
+List: 
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+
+LHS After Assignment:
+List: 
+
+Employee: Test C
+PayRate: 14
+Total Pay: 350$
+
+
+Employee: Test D
+PayRate: 9
+Total Pay: 450$
+
+
+Employee: Test E
+PayRate: 9
+Total Pay: 450$
+
+
+String: 
+
+Adding 4 Objects:
+Enqueuing String 1...
+Enqueuing String 2...
+Enqueuing String 3...
+Enqueuing String 4...
+List: 
+String 1
+String 2
+String 3
+String 4
+
+Removing 2 Objects
+Dequeuing String 1...
+List: 
+String 2
+String 3
+String 4
+
+Dequeuing String 2...
+List: 
+String 3
+String 4
+
+Copy Constructor Called
+
+= Overload Called
+
+Adding 1 Object
+Enqueuing string 5...
+List: 
+String 3
+String 4
+string 5
+
+LHS:
+List: 
+String 3
+String 4
+
+= Overload Called
+
+RHS:
+List: 
+String 3
+String 4
+string 5
+
+LHS After Assignment:
+List: 
+String 3
+String 4
+string 5
+
+===========================
+|       SUTree Tests      |
+===========================
+Post Order: 
+10->2->50->100->40->/
+
+Blaine->Chris->Jake->Dad->/
+
+Pre Order: 
+40->2->10->100->50->/
+
+Dad->Chris->Blaine->Jake->/
+
+In Order: 
+2->10->40->50->100->/
+
+Blaine->Chris->Dad->Jake->/
+
+intBST has 40: 1
+intBST has 20: 0
+strBST has 'Dad': 1
+strBST has 'Joe': 0
+Destructing List...
+Destructing List...
+Destructing List...
+Destructing List...
+Destructing List...
+Destructing List...
+Destructing List...
+Destructing List...
+Destructing StackArr...
+Destructing StackArr...
+Destructing StackArr...
+Destructing StackArr...
+Destructing List...
+Destructing List...
+Destructing List...
+Destructing List...
+==8159== 
+==8159== HEAP SUMMARY:
+==8159==     in use at exit: 0 bytes in 0 blocks
+==8159==   total heap usage: 91 allocs, 91 frees, 79,512 bytes allocated
+==8159== 
+==8159== All heap blocks were freed -- no leaks are possible
+==8159== 
+==8159== For counts of detected and suppressed errors, rerun with: -v
+==8159== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

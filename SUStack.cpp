@@ -36,6 +36,8 @@ bool SUStackArr<DataType>::isEmpty() const{ // Check if the stack is empty
   return size() == 0;
 }
 
+//IN: Reference to a DataType
+//OUT: void
 template <class DataType>
 void SUStackArr<DataType>::push(const DataType& d){ // Pushes an object onto the stack
   std::cout << "Pushing: " << d << std::endl;
@@ -50,6 +52,8 @@ void SUStackArr<DataType>::push(const DataType& d){ // Pushes an object onto the
   }
 }
 
+//IN: Reference to a DataType
+//OUT: void
 template <class DataType>
 void SUStackArr<DataType>::pop(DataType& d){ // Pop an object off the stack and store it
   d = arr[top];
@@ -59,6 +63,8 @@ void SUStackArr<DataType>::pop(DataType& d){ // Pop an object off the stack and 
   arr = copyArr(arr, capacity, top);
 }
 
+//IN:
+//OUT:  
 template <class DataType>
 void SUStackArr<DataType>::printStack() const{ // Prints the stack from the top, down
   std::cout << "Stack: " << std::endl;
@@ -68,6 +74,8 @@ void SUStackArr<DataType>::printStack() const{ // Prints the stack from the top,
   std::cout << std::endl;
 }
 
+//IN: Reference to the rhs of the =
+//OUT: A pointer to this
 template <class DataType>
 SUStackArr<DataType>& SUStackArr<DataType>::operator=(const SUStackArr<DataType>& rhs){ // Assignment operator
   std::cout << "= Overload Called" << std::endl << std::endl;
@@ -79,9 +87,12 @@ SUStackArr<DataType>& SUStackArr<DataType>::operator=(const SUStackArr<DataType>
     this->arr[i] = rhs.arr[i];
   return *this;
 }
+
+//IN: Pointer to an array, capacity, top
+//OUT: Pointer to the head of array at the given capacity
 template <class DataType>
 DataType* SUStackArr<DataType>::copyArr(DataType* arr, int cap, int t){
-  DataType* newArr;
+  DataType* newArr = nullptr;
   newArr = new DataType[cap];
   for(int i = 0; i <= t; i++){
     newArr[i] = arr[i];
@@ -94,14 +105,14 @@ DataType* SUStackArr<DataType>::copyArr(DataType* arr, int cap, int t){
 
 
 
-
 template <class DataType>
 SUStackList<DataType>::SUStackList(){ // Constructor
-
 }
 
 template <class DataType>
 SUStackList<DataType>::SUStackList(const SUStackList & rhs){ // Copy Constructor
+  std::cout << "Copy Constructor Called" << std::endl << std::endl;
+  *this = rhs;
 }
 
 template <class DataType>
@@ -109,16 +120,22 @@ SUStackList<DataType>::~SUStackList(){ // Destructor
 
 }
 
+//IN:
+//OUT: Size of the List
 template <class DataType>
 int SUStackList<DataType>::size() const{ // get the number of elements in the stack
   return list.size();
 }
 
+//IN:
+//OUT: true or false 
 template <class DataType>
 bool SUStackList<DataType>::isEmpty() const{ // Check if the stack is empty
   return size() == 0;
 }
 
+//IN: DataType by Reference
+//OUT: void
 template <class DataType>
 void SUStackList<DataType>::push(const DataType& d){ // Pushes an object onto the stack
   std::cout << "Pushing..." << std::endl << d << std::endl;
@@ -126,20 +143,19 @@ void SUStackList<DataType>::push(const DataType& d){ // Pushes an object onto th
   return;
 }
 
+//IN: DataType by Reference
+//OUT: void 
 template <class DataType>
 void SUStackList<DataType>::pop(DataType& d){ // Pop an object off the stack and store it
   d = list.getFront();
   std::cout << "Popping ..." << std::endl << d << std::endl;
 }
 
+//IN:
+//OUT: void 
 template <class DataType>
 void SUStackList<DataType>::printStack() const{ // Prints the stack from the top, down
   list.display();
   return;
 }
-/*
-template <class DataType>
-SUStackList<DataType>& SUStackList<DataType>::operator=(const SUStackList<DataType>& rhs){ // Assignment operator
 
-}
-*/

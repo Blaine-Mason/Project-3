@@ -1,15 +1,42 @@
 Luke Engle, Blaine Mason
 Computer Science II (COSC 220)
 
+***********************************************************************************
+Problem-solving approaches:
+  The first class implemented was SUList since it is the base for SUStackList and 
+  SUQueueList. Once SUList was 'perfected' and proved worthy, the Stack and Queue 
+  implementations were easy since they were calls to the SUList operations. Having  
+  the Linked List doublely made overloading the operator[] easy, and also allowed 
+  more compatability as a library. After SUList was finished, the Arr methods were 
+  created for both Stack and Queue, and this was with arrays so there wasn't much 
+  confusion. Problems were present during the overload<< for all classes, since the 
+  entire thing is templated, the friend function can only be defined "in-line". 
+  Having the book helped for Binary Search Tree since it pretty much gave us all 
+  the code, but the testing was done by us. Having two people helped simple issues 
+  that would be widely over-analysed. We were both able to spot simple issues in our 
+  code and work together to attempt to not leak any memeory, since throughout the 
+  semester that has definitely been an issue for the both of us.
+************************************************************************************
+
+************************************************************************************
+Known "Features":
+  When performing a copy constructor for QueueList or StackList, in the method body
+  the SUList =overload is invoked on *this {*this = rhs;} performing a deep copy. This 
+  solution was created because we couldn't find a way to invoke the copy constructor
+  from SUList so we invoked the =overload.
+************************************************************************************
+
+
 Project 3
 
 Files:
-  payroll.cpp
+  payroll.cpp~(payroll.h)
   SULibTest.cpp
-  SUList.cpp
-  SUQueue.cpp
-  SUStack.cpp
-  SUTree.cpp
+  SUList.cpp()~(SUList.h)
+  SUQueue.cpp~(SUQueue.h)
+  SUStack.cpp~(SUStack.h)
+  SUTree.cpp~(SUTree.h)
+  Makefile~(Enter 'make' then './run')
 
 =============
 payroll.cpp
@@ -59,7 +86,3 @@ Bonus features implemented:
   Re-implementation of Project 1
   Re-implementation of Project 2
   Binary search tree
-
-
-
-Problem-solving approaches:
